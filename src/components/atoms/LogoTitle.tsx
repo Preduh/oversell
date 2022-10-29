@@ -1,5 +1,5 @@
 export const LogoTitle = (): JSX.Element => {
   return (
-    <span className="ml-3 text-xl">Oversell</span>
+    <span className="ml-3 text-xl dark:text-gray-50">Oversell</span>
   )
 }

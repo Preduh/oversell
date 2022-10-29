@@ -7,11 +7,11 @@ export const HeroSection = (): JSX.Element => {
 
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="">
-            <h1 className="sm:text-5xl text-2xl font-bold title-font text-center text-gray-900 mb-4">
+          <div className="text-gray-900 dark:text-white">
+            <h1 className="sm:text-5xl text-2xl font-bold title-font text-center mb-4">
               Oversell
             </h1>
-            <h2 className="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">
+            <h2 className="sm:text-3xl text-2xl font-medium title-font text-center mb-20">
               Tudo para alavancar suas vendas e
               <br className="hidden sm:block" />
               turbinar seu empreendimento
@@ -33,16 +33,16 @@ export const HeroSection = (): JSX.Element => {
                 </svg>
               </div>
               <div className="flex-grow pl-6">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
+                <h2 className="text-gray-900 text-lg title-font font-medium mb-2 dark:text-gray-100">
                   Shooting Stars
                 </h2>
-                <p className="leading-relaxed text-base">
+                <p className="leading-relaxed text-base dark:text-zinc-500">
                   Blue bottle crucifix vinyl post-ironic four dollar toast vegan
                   taxidermy. Gastropub indxgo juice poutine, ramps microdosing
                   banh mi pug VHS try-hard ugh iceland kickstarter tumblr
                   live-edge tilde.
                 </p>
-                <a className="mt-3 text-indigo-500 inline-flex items-center">
+                <a className="mt-3 text-indigo-500 dark:text-white cursor-pointer inline-flex items-center">
                   Learn More
                   <svg
                     fill="none"
@@ -75,16 +75,16 @@ export const HeroSection = (): JSX.Element => {
                 </svg>
               </div>
               <div className="flex-grow pl-6">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
+                <h2 className="text-gray-900 text-lg title-font font-medium mb-2 dark:text-gray-100">
                   The Catalyzer
                 </h2>
-                <p className="leading-relaxed text-base">
+                <p className="leading-relaxed text-base dark:text-zinc-500">
                   Blue bottle crucifix vinyl post-ironic four dollar toast vegan
                   taxidermy. Gastropub indxgo juice poutine, ramps microdosing
                   banh mi pug VHS try-hard ugh iceland kickstarter tumblr
                   live-edge tilde.
                 </p>
-                <a className="mt-3 text-indigo-500 inline-flex items-center">
+                <a className="mt-3 text-indigo-500 dark:text-white cursor-pointer inline-flex items-center">
                   Learn More
                   <svg
                     fill="none"
@@ -116,16 +116,16 @@ export const HeroSection = (): JSX.Element => {
                 </svg>
               </div>
               <div className="flex-grow pl-6">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
+                <h2 className="text-gray-900 text-lg title-font font-medium mb-2 dark:text-gray-100">
                   Neptune
                 </h2>
-                <p className="leading-relaxed text-base">
+                <p className="leading-relaxed text-base dark:text-zinc-500">
                   Blue bottle crucifix vinyl post-ironic four dollar toast vegan
                   taxidermy. Gastropub indxgo juice poutine, ramps microdosing
                   banh mi pug VHS try-hard ugh iceland kickstarter tumblr
                   live-edge tilde.
                 </p>
-                <a className="mt-3 text-indigo-500 inline-flex items-center">
+                <a className="mt-3 text-indigo-500 dark:text-white cursor-pointer inline-flex items-center">
                   Learn More
                   <svg
                     fill="none"
