@@ -6,7 +6,11 @@ module.exports = {
     './src/components/**/*.tsx'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'purple-blue': '#6366F1'
+      }
+    }
   },
   plugins: []
 }

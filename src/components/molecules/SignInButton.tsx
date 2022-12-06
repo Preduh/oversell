@@ -7,7 +7,7 @@ export const SignInButton = (): JSX.Element => {
     <Link passHref href="/entrar">
       <button
         id="signin-button"
-        className="inline-flex items-center text-white bg-[#6366F1] cursor-pointer transition-colors border-0 py-1 px-3 focus:outline-none hover:bg-[#5154e0] rounded text-base mt-4 md:mt-0"
+        className="inline-flex items-center text-white bg-purple-blue cursor-pointer transition-colors border-0 py-1 px-3 focus:outline-none hover:bg-[#5154e0] rounded text-base mt-4 md:mt-0"
       >
         <ButtonLabel label="Entrar" />
         <RightArrowIcon />
