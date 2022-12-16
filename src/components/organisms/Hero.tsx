@@ -1,6 +1,6 @@
 export const Hero = (): JSX.Element => {
   return (
-    <div className="text-gray-600 body-font">
+    <div className="text-gray-600 body-font bg-white dark:bg-zinc-900">
         <div className="container px-5 py-24 mx-auto">
           <div className="text-gray-900 dark:text-white">
             <h1 className="sm:text-5xl text-2xl font-bold title-font text-center mb-4">

@@ -6,7 +6,9 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { AuthContext } from '../../contexts/Auth'
 import { LoadingIcon } from '../atoms/LoadingIcon'
+import { LogoIcon } from '../atoms/LogoIcon'
 import { api } from '../config/api'
+import { ToggleThemeButton } from '../molecules/ToggleThemeButton'
 
 interface FormData {
   email: string
@@ -65,20 +67,32 @@ export const SignIn = (): JSX.Element => {
 
   return (
     <div className="sm:grid grid-cols-8 h-screen">
-      <section className="hidden col-start-1 col-end-6 bg-purple-blue sm:flex items-center justify-center">
+      <section className="hidden col-start-1 col-end-6 bg-purple-blue dark:bg-zinc-900 sm:flex items-center justify-center">
         <div className="w-4/6 h-4/6 relative">
-          <Image fill src="/visual-data-bro.svg" alt="Visual data bro" />
+          <Image
+            priority
+            sizes='100'
+            fill
+            src="/visual-data-bro.svg"
+            alt="Visual data bro"
+          />
         </div>
       </section>
 
-      <section className="h-screen col-start-6 col-end-9 px-12 sm:px-16 flex items-center flex-col justify-center space-y-8">
+      <section className="dark:bg-zinc-800 h-screen col-start-6 col-end-9 px-12 sm:px-16 flex items-center flex-col justify-center space-y-8">
+        <div className="absolute top-8 right-8">
+          <ToggleThemeButton />
+        </div>
+
         <div className="space-y-4 flex flex-col items-center text-center">
-          <h1 className="text-2xl font-medium text-zinc-800">
+          <LogoIcon className="h-16 w-16" />
+
+          <h1 className="text-2xl font-medium text-zinc-800 dark:text-gray-100">
             Bem-vindo(a) à Oversell
           </h1>
           <div className="flex items-center space-x-2">
             <hr className="w-12 border-zinc-400" />
-            <h2 className="text-zinc-700 whitespace-nowrap">
+            <h2 className="text-zinc-700 dark:text-gray-300 whitespace-nowrap">
               Entre em sua conta
             </h2>
             <hr className="w-12 border-zinc-400" />
@@ -89,7 +103,7 @@ export const SignIn = (): JSX.Element => {
           <div className="mb-6">
             <label
               htmlFor="email"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100"
             >
               Email
             </label>
@@ -98,7 +112,7 @@ export const SignIn = (): JSX.Element => {
               {...register('email')}
               type="email"
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-blue-500 block w-full p-2.5 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-0 dark:focus:outline-0 dark:focus:border-purple-blue"
               placeholder="nome@mail.com"
             />
 
@@ -109,7 +123,7 @@ export const SignIn = (): JSX.Element => {
           <div className="mb-6">
             <label
               htmlFor="password"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100"
             >
               Senha
             </label>
@@ -118,7 +132,7 @@ export const SignIn = (): JSX.Element => {
               {...register('password')}
               type="password"
               id="password"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-blue-500 block w-full p-2.5 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:outline-none dark:focus:border-purple-blue"
             />
 
             <p className="text-sm text-red-500 ml-1 mt-1">
