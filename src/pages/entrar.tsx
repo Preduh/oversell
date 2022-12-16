@@ -1,16 +1,16 @@
 import Head from 'next/head'
-import { SignUp } from '../components/templates/SignUp'
+import { SignIn } from '../components/templates/SignIn'
 
-const Cadastrar = (): JSX.Element => {
+const Entrar = (): JSX.Element => {
   return (
     <div>
       <Head>
         <title>Oversell - Entrar</title>
       </Head>
 
-      <SignUp />
+      <SignIn />
     </div>
   )
 }
 
-export default Cadastrar
+export default Entrar
