@@ -1,5 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -9,10 +10,19 @@ import { LoadingIcon } from '../atoms/LoadingIcon'
 import { LogoIcon } from '../atoms/LogoIcon'
 import { api } from '../config/api'
 import { ToggleThemeButton } from '../molecules/ToggleThemeButton'
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 
 interface FormData {
   email: string
   password: string
+}
+
+interface HttpError {
+  response: {
+    data: {
+      error: string
+    }
+  }
 }
 
 interface SignInResponse {
@@ -34,6 +44,10 @@ const validationSchema = yup.object({
 
 export const SignIn = (): JSX.Element => {
   const [loading, setLoading] = useState(false)
+  const [submitError, setSubmitError] = useState({
+    isThereAnyError: false,
+    errorMessage: ''
+  })
   const { setUser, setToken } = useContext(AuthContext)
 
   const router = useRouter()
@@ -48,6 +62,11 @@ export const SignIn = (): JSX.Element => {
 
   const onSubmit = async ({ email, password }: FormData): Promise<void> => {
     try {
+      setSubmitError({
+        isThereAnyError: false,
+        errorMessage: ''
+      })
+
       setLoading(true)
 
       const { data } = await api.post<SignInResponse>('/login', {
@@ -60,18 +79,26 @@ export const SignIn = (): JSX.Element => {
 
       await router.push('/')
     } catch (error) {
+      const httpError = error as HttpError
+
+      if (httpError.response.data.error) {
+        setSubmitError({
+          isThereAnyError: true,
+          errorMessage: httpError.response.data.error
+        })
+      }
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="sm:grid grid-cols-8 h-screen">
-      <section className="hidden col-start-1 col-end-6 bg-purple-blue dark:bg-zinc-900 sm:flex items-center justify-center">
+    <div className="sm:grid grid-cols-8 h-full min-h-screen">
+      <section className="hidden py-8 h-full min-h-screen col-end-5 col-start-1 lg:col-end-6 bg-purple-blue dark:bg-zinc-900 sm:flex items-center justify-center">
         <div className="w-4/6 h-4/6 relative">
           <Image
             priority
-            sizes='100'
+            sizes="100"
             fill
             src="/visual-data-bro.svg"
             alt="Visual data bro"
@@ -79,15 +106,15 @@ export const SignIn = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="dark:bg-zinc-800 h-screen col-start-6 col-end-9 px-12 sm:px-16 flex items-center flex-col justify-center space-y-8">
+      <section className="dark:bg-zinc-800 h-screen col-start-5 col-end-9 lg:col-start-6 px-12 sm:px-16 flex items-center flex-col justify-center space-y-8">
         <div className="absolute top-8 right-8">
           <ToggleThemeButton />
         </div>
 
         <div className="space-y-4 flex flex-col items-center text-center">
-          <LogoIcon className="h-16 w-16" />
+          <LogoIcon className="h-12 w-12 md:h-16 md:w-16" />
 
-          <h1 className="text-2xl font-medium text-zinc-800 dark:text-gray-100">
+          <h1 className="text-xl md:text-2xl font-medium text-zinc-800 dark:text-gray-100">
             Bem-vindo(a) à Oversell
           </h1>
           <div className="flex items-center space-x-2">
@@ -100,6 +127,13 @@ export const SignIn = (): JSX.Element => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+          {submitError.isThereAnyError && (
+            <div className="flex space-x-2 mb-6 mt-2 text-red-600 dark:text-yellow-200">
+              <ExclamationTriangleIcon className='w-5 h-5' />
+              <p>{submitError.errorMessage}</p>
+            </div>
+          )}
+
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -110,7 +144,7 @@ export const SignIn = (): JSX.Element => {
 
             <input
               {...register('email')}
-              type="email"
+              type="text"
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-blue-500 block w-full p-2.5 dark:bg-zinc-800 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-0 dark:focus:outline-0 dark:focus:border-purple-blue"
               placeholder="nome@mail.com"
@@ -174,6 +208,18 @@ export const SignIn = (): JSX.Element => {
             </button>
               )}
         </form>
+
+        <div className="w-full text-zinc-800 dark:text-gray-100">
+          <p className="">
+            Não tem conta?{' '}
+            <Link
+              className="text-purple-blue font-bold hover:text-dark-purple-blue hover:underline"
+              href="/cadastrar"
+            >
+              Registre-se aqui
+            </Link>
+          </p>
+        </div>
       </section>
     </div>
   )
