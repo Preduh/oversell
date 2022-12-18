@@ -1,3 +1,4 @@
+import { Bars3Icon } from '@heroicons/react/24/outline'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/Auth'
 import { HeaderLinks } from '../molecules/HeaderLinks'
@@ -9,12 +10,12 @@ export const Header = (): JSX.Element => {
   const { user } = useContext(AuthContext)
 
   return (
-    <header className="text-gray-600 dark:bg-zinc-800 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <header className="text-gray-600 sm:dark:bg-zinc-800 body-font">
+      <div className="container mx-auto flex justify-between sm:flex-wrap py-4 px-8 sm:p-5 md:flex-row items-center">
         <Logo />
         <HeaderLinks />
 
-        <div id="buttons" className="flex space-x-4">
+        <div id="buttons" className="hidden sm:flex space-x-4">
           <ToggleThemeButton />
           {user.username
             ? (
@@ -28,6 +29,8 @@ export const Header = (): JSX.Element => {
             <SignInButton />
               )}
         </div>
+
+        <Bars3Icon className='w-8 h-8 sm:hidden' />
       </div>
     </header>
   )

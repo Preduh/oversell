@@ -27,7 +27,7 @@ const links: Link[] = [
 
 export const HeaderLinks = (): JSX.Element => {
   return (
-    <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+    <nav className="hidden md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 sm:flex flex-wrap items-center text-base justify-center">
       {links.map((link) => (
         <HeaderLink key={link.id} title={link.title} />
       ))}
