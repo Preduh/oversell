@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import nookies from 'nookies'
 import {
   createContext,
   Dispatch,
@@ -8,7 +8,6 @@ import {
   useState
 } from 'react'
 import { api } from '../components/config/api'
-import nookies from 'nookies'
 
 export interface User {
   id: string
@@ -44,8 +43,6 @@ const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
 
   const [token, setToken] = useState<string>('')
 
-  const router = useRouter()
-
   // Checa se o token é válido
   useEffect(() => {
     if (localStorage) {
@@ -66,8 +63,6 @@ const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
           .catch((error) => {
             return error
           })
-      } else {
-        router.push('/entrar').catch(() => {})
       }
     }
   }, [])
