@@ -4,24 +4,29 @@ import { v4 as uuid } from 'uuid'
 interface Link {
   id: string
   title: string
+  path: string
 }
 
 const links: Link[] = [
   {
     id: uuid(),
-    title: 'First Link'
+    title: 'Dashboard',
+    path: '/dashboard'
   },
   {
     id: uuid(),
-    title: 'Second Link'
+    title: 'Second Link',
+    path: '#'
   },
   {
     id: uuid(),
-    title: 'Third Link'
+    title: 'Third Link',
+    path: '#'
   },
   {
     id: uuid(),
-    title: 'Fourth Link'
+    title: 'Fourth Link',
+    path: '#'
   }
 ]
 
@@ -29,7 +34,7 @@ export const HeaderLinks = (): JSX.Element => {
   return (
     <nav className="hidden md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 sm:flex flex-wrap items-center text-base justify-center">
       {links.map((link) => (
-        <HeaderLink key={link.id} title={link.title} />
+        <HeaderLink key={link.id} title={link.title} path={link.path} />
       ))}
     </nav>
   )

@@ -11,6 +11,7 @@ import { LogoIcon } from '../atoms/LogoIcon'
 import { api } from '../config/api'
 import { ToggleThemeButton } from '../molecules/ToggleThemeButton'
 import * as yup from 'yup'
+import nookies from 'nookies'
 
 interface FormData {
   username: string
@@ -82,7 +83,15 @@ export const SignUp = (): JSX.Element => {
       setUser(data.user)
       setToken(data.token)
 
-      await router.push('/')
+      nookies.set(null, 'oversell.token', data.token, {
+        maxAge: 24 * 60 * 60
+      })
+
+      nookies.set(null, 'oversell.username', data.user.username, {
+        maxAge: 24 * 60 * 60
+      })
+
+      await router.push('/dashboard')
     } catch (error) {
       const httpError = error as HttpError
 
