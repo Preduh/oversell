@@ -3,15 +3,15 @@ import Head from 'next/head'
 import { Header } from '../components/organisms/Header'
 import nookies from 'nookies'
 
-interface DashboardProps {
+interface PerfilProps {
   token: string
 }
 
-export default function Dashboard ({ token }: DashboardProps): JSX.Element {
+export default function Perfil ({ token }: PerfilProps): JSX.Element {
   return (
     <div className="bg-zinc-900 h-screen w-full">
       <Head>
-        <title>Dashboard</title>
+        <title>Perfil</title>
       </Head>
       <Header token={token} />
     </div>

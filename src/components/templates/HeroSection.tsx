@@ -1,10 +1,14 @@
 import { Header } from '../organisms/Header'
 import { Hero } from '../organisms/Hero'
 
-export const HeroSection = (): JSX.Element => {
+interface HeroProps {
+  token: string
+}
+
+export const HeroSection = ({ token }: HeroProps): JSX.Element => {
   return (
     <section>
-      <Header />
+      <Header token={token} />
       <Hero />
     </section>
   )
