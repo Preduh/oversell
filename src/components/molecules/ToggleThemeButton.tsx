@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { ThemeContext } from '../../contexts/Theme'
 import { MoonIcon } from '../atoms/MoonIcon'
 import { SunIcon } from '../atoms/SunIcon'
-import { SwitchButton } from '../atoms/SwitchButton'
 
 export const ToggleThemeButton = (): JSX.Element => {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -19,14 +18,8 @@ export const ToggleThemeButton = (): JSX.Element => {
 
   return (
     <div className="flex items-center space-x-2">
-      <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
-        <SunIcon />
-      </span>
-
-      <SwitchButton onChange={toggle} value={theme === 'dark'} />
-
-      <span className="text-sm font-medium text-gray-900 dark:text-gray-300">
-        <MoonIcon />
+      <span onClick={() => toggle()} className="text-sm cursor-pointer w-10 h-10 flex items-center justify-center rounded-md transition-all font-medium text-gray-900 dark:text-gray-300">
+        {theme === 'dark' ? (<SunIcon />) : (<MoonIcon />)}
       </span>
     </div>
   )

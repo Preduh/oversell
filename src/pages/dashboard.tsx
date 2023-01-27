@@ -9,7 +9,7 @@ interface DashboardProps {
 
 export default function Dashboard ({ token }: DashboardProps): JSX.Element {
   return (
-    <div className="bg-zinc-900 h-screen w-full">
+    <div className="dark:bg-zinc-900 h-screen w-full">
       <Head>
         <title>Dashboard</title>
       </Head>
