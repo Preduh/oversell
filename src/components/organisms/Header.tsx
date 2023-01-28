@@ -32,9 +32,9 @@ export const Header = ({ token }: HeaderProps): JSX.Element => {
         <Logo />
         {!token && <HeaderLinks />}
 
-        <div id="buttons" className="hidden sm:flex space-x-4">
+        <div id="buttons" className="hidden sm:flex space-x-4 items-center">
           <ToggleThemeButton />
-          <>{username ? <UserPopover /> : <SignInButton />}</>
+          {username ? <UserPopover username={username} /> : <SignInButton />}
         </div>
 
         <Bars3Icon className="w-8 h-8 sm:hidden" />
