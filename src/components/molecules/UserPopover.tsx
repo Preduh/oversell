@@ -93,7 +93,7 @@ export function UserPopover ({ username }: UserPopoverProps): JSX.Element {
             isOpen
               ? 'ring-2 ring-offset-2 dark:ring-offset-zinc-700 ring-purple-blue dark:ring-opacity-50'
               : ''
-          } w-12 h-12 bg-purple-blue rounded-full flex items-center justify-center cursor-pointer outline-none hover:ring-2 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-zinc-700 hover:ring-purple-blue dark:hover:ring-opacity-50`}
+          } w-10 h-10 bg-purple-blue rounded-full flex items-center justify-center cursor-pointer outline-none hover:ring-2 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-zinc-700 hover:ring-purple-blue dark:hover:ring-opacity-50`}
         >
           <p className="uppercase text-gray-100 font-bold text-xl">{username.split('')[0]}</p>
         </button>

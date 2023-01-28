@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const HeroSection = ({ token }: HeroProps): JSX.Element => {
   return (
-    <section>
+    <section className='pt-16'>
       <Header token={token} />
       <Hero />
     </section>

@@ -27,8 +27,8 @@ export const Header = ({ token }: HeaderProps): JSX.Element => {
   }, [])
 
   return (
-    <header className="text-gray-600 bg-white sm:dark:bg-zinc-800 body-font">
-      <div className="container mx-auto flex justify-between sm:flex-wrap py-4 px-8 sm:p-5 md:flex-row items-center">
+    <header className="fixed left-0 top-0 w-full text-gray-600 bg-white sm:dark:bg-zinc-800 body-font h-16">
+      <div className="container mx-auto flex justify-between sm:flex-wrap py-4 px-8 sm:py-0 md:flex-row items-center h-16">
         <Logo />
         {!token && <HeaderLinks />}
 
