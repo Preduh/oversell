@@ -114,7 +114,9 @@ export const SignUp = (): JSX.Element => {
         </div>
 
         <div className="space-y-4 flex flex-col items-center text-center">
-        <LogoIcon className="h-12 w-12 md:h-16 md:w-16" />
+          <Link className="cursor-pointer" href="/">
+            <LogoIcon className="h-12 w-12 md:h-16 md:w-16" />
+          </Link>
 
           <h1 className="text-xl md:text-2xl font-medium text-zinc-800 dark:text-gray-100">
             Bem-vindo(a) à Oversell

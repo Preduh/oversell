@@ -121,7 +121,9 @@ export const SignIn = (): JSX.Element => {
         </div>
 
         <div className="space-y-4 flex flex-col items-center text-center">
-          <LogoIcon className="h-12 w-12 md:h-16 md:w-16" />
+          <Link className="cursor-pointer" href="/">
+            <LogoIcon className="h-12 w-12 md:h-16 md:w-16" />
+          </Link>
 
           <h1 className="text-xl md:text-2xl font-medium text-zinc-800 dark:text-gray-100">
             Bem-vindo(a) à Oversell
@@ -138,7 +140,7 @@ export const SignIn = (): JSX.Element => {
         <form onSubmit={handleSubmit(onSubmit)} className="w-full">
           {submitError.isThereAnyError && (
             <div className="flex space-x-2 mb-6 mt-2 text-red-600 dark:text-yellow-200">
-              <ExclamationTriangleIcon className='w-5 h-5' />
+              <ExclamationTriangleIcon className="w-5 h-5" />
               <p>{submitError.errorMessage}</p>
             </div>
           )}
