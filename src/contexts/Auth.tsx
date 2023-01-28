@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import nookies from 'nookies'
 import {
   createContext,
@@ -43,6 +44,8 @@ const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
 
   const [token, setToken] = useState<string>('')
 
+  const router = useRouter()
+
   // Checa se o token é válido
   useEffect(() => {
     if (localStorage) {
@@ -60,8 +63,18 @@ const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
           .then((response) => {
             setUser(response.data)
           })
-          .catch((error) => {
-            return error
+          .catch(async () => {
+            nookies.destroy(null, 'oversell.token')
+            nookies.destroy(null, 'oversell.username')
+
+            setToken('')
+            setUser({
+              id: '',
+              email: '',
+              username: ''
+            })
+
+            await router.push('/entrar')
           })
       }
     }
