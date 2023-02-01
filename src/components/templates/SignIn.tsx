@@ -16,6 +16,7 @@ import nookies from 'nookies'
 interface FormData {
   email: string
   password: string
+  remember: boolean
 }
 
 interface HttpError {
@@ -61,7 +62,7 @@ export const SignIn = (): JSX.Element => {
     resolver: yupResolver(validationSchema)
   })
 
-  const onSubmit = async ({ email, password }: FormData): Promise<void> => {
+  const onSubmit = async ({ email, password, remember }: FormData): Promise<void> => {
     try {
       setSubmitError({
         isThereAnyError: false,
@@ -72,7 +73,8 @@ export const SignIn = (): JSX.Element => {
 
       const { data } = await api.post<SignInResponse>('/login', {
         email,
-        password
+        password,
+        extendTime: remember
       })
 
       setUser(data.user)
@@ -187,6 +189,7 @@ export const SignIn = (): JSX.Element => {
           <div className="flex items-start mb-6">
             <div className="flex items-center h-5">
               <input
+              {...register('remember')}
                 id="remember"
                 type="checkbox"
                 value=""
