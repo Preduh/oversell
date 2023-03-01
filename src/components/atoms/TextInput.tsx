@@ -60,7 +60,7 @@ export const TextInput = ({
           aria-label={label}
           className={`border w-full ${
             error ? 'border-red-400 outline-red-400' : 'border-zinc-300 dark:border-zinc-500'
-          }  bg-zinc-100 h-10 px-2 text-slate-600 outline-blue-500 dark:bg-zinc-600`}
+          }  bg-zinc-100 h-10 px-2 text-slate-600 dark:text-gray-100 focus:outline-none dark:focus:border dark:focus:border-indigo-500 dark:bg-zinc-600`}
         />
         {type === 'password' &&
           (passwordIsHidden
