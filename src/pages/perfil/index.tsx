@@ -1,13 +1,13 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { Header } from '../components/organisms/Header'
+import { Header } from '../../components/organisms/Header'
 import nookies from 'nookies'
 import Image from 'next/image'
 import { useForm, Controller } from 'react-hook-form'
-import { TextInput } from '../components/atoms/TextInput'
+import { TextInput } from '../../components/atoms/TextInput'
 import Link from 'next/link'
 import { useContext, useEffect } from 'react'
-import { AuthContext } from '../contexts/Auth'
+import { AuthContext } from '../../contexts/Auth'
 
 interface PerfilProps {
   token: string
@@ -162,7 +162,7 @@ export default function Perfil ({ token, username }: PerfilProps): JSX.Element {
                 </div>
               </div>
 
-              <Link className="text-blue-500 hover:underline" href="#">
+              <Link className="text-purple-blue hover:underline" href="/perfil/change-password">
                 Alterar senha
               </Link>
             </form>

@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("../../public/fonts/firacode-variable.ttf") format("ttf");
+}
+
+* {
+  font-family: 'Fira Code', sans-serif;
+}

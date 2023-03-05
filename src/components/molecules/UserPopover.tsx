@@ -72,7 +72,7 @@ export function UserPopover ({ username }: UserPopoverProps): JSX.Element {
       router.reload()
     }
 
-    await router.push('/')
+    await router.push('/entrar')
   }
 
   return (
@@ -80,7 +80,7 @@ export function UserPopover ({ username }: UserPopoverProps): JSX.Element {
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
-          className="w-screen h-screen fixed z-10 top-0 right-0"
+          className="w-screen h-screen fixed z-10 top-0 right-0 bg-black opacity-50"
         />
       )}
 
@@ -113,7 +113,7 @@ export function UserPopover ({ username }: UserPopoverProps): JSX.Element {
             } absolute right-0 z-10 mt-3 w-56 transform px-4 sm:px-0 lg:max-w-3xl`}
           >
             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-              <div className="relative dark:bg-zinc-600 p-4 lg:grid-cols-2">
+              <div className="relative dark:bg-zinc-700 p-4 lg:grid-cols-2">
                 {options.map((option) => {
                   if (option.path) {
                     return (
@@ -130,7 +130,7 @@ export function UserPopover ({ username }: UserPopoverProps): JSX.Element {
                         <Link
                           href={option.path}
                           onClick={() => setIsOpen(false)}
-                          className={`flex space-x-2 p-2 hover:bg-indigo-100 dark:hover:bg-zinc-700 hover:rounded-md transition-all ${
+                          className={`flex space-x-2 p-2 hover:bg-indigo-100 dark:hover:bg-zinc-800 hover:rounded-md transition-all ${
                             option.path === router.pathname && !isHover
                               ? 'dark:bg-zinc-700 rounded-md'
                               : ''
@@ -155,7 +155,7 @@ export function UserPopover ({ username }: UserPopoverProps): JSX.Element {
                       >
                         <button
                           onClick={handleLogoutClick}
-                          className={`flex space-x-2 p-2 w-full hover:bg-indigo-100 dark:hover:bg-zinc-700 hover:rounded-md transition-all ${
+                          className={`flex space-x-2 p-2 w-full hover:bg-indigo-100 dark:hover:bg-zinc-800 hover:rounded-md transition-all ${
                             option.path === router.pathname && !isHover
                               ? 'dark:bg-zinc-700 rounded-md'
                               : ''

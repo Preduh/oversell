@@ -8,7 +8,7 @@ import {
   useMemo,
   useState
 } from 'react'
-import { api } from '../components/config/api'
+import { api } from '../config/api'
 
 export interface User {
   id: string

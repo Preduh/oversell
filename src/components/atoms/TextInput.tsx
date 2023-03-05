@@ -10,7 +10,7 @@ interface TextInputProps
   label: string
   name: string
   placeholder?: string
-  value: any
+  value: string
   autoFocus?: boolean
   onChange: (...event: any[]) => void
   error?: FieldError
@@ -22,7 +22,7 @@ interface TextInputProps
 
 export const TextInput = ({
   onChange,
-  value,
+  value = '',
   error,
   label,
   name,
