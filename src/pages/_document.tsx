@@ -11,7 +11,7 @@ export default function Document (): JSX.Element {
         <meta property="og:url" content="https://oversell.com.br" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Oversell" />
-        <meta property="og:image" content="https://www.oversell.com.br/oversell-social-media-preview.png" />]
+        <meta property="og:image" content="https://www.oversell.com.br/oversell-social-media-preview.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
