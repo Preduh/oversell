@@ -12,5 +12,5 @@
 }
 
 html, body {
-  @apply bg-zinc-900;
+  @apply bg-white dark:bg-zinc-900;
 }
