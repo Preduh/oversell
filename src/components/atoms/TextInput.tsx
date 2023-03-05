@@ -41,7 +41,7 @@ export const TextInput = ({
   }
 
   return (
-    <div className="flex flex-col w-full text-sm cursor-text relative space-y-2">
+    <div className="flex flex-col w-full text-sm cursor-text space-y-2">
       <label htmlFor={name} className="text-zinc-600 text-sm dark:text-secondary-dark-text">
         {label}
         {required && <span className="text-red-500">*</span>}

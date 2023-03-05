@@ -92,7 +92,7 @@ export default function ChangePassword ({
   }
 
   return (
-    <div className="dark:bg-zinc-900 h-screen w-full">
+    <div className="dark:bg-zinc-900 h-full md:h-screen w-full">
       <Head>
         <title>Perfil</title>
       </Head>
@@ -118,19 +118,19 @@ export default function ChangePassword ({
         />
       )}
 
-      <div className="h-full pt-16 px-page-margin space-y-8">
+      <div className="h-full pt-16 px-8 md:px-page-margin space-y-8">
         <div className="flex justify-between items-center mt-4">
-          <h1 className="text-primary-dark-text text-xl font-bold">
+          <h1 className="text-primary-dark-text text-lg md:text-xl font-bold">
             Alterar senha
           </h1>
 
-          <PrimaryButton className="w-48" onClick={() => router.back()}>
+          <PrimaryButton className="w-32 md:w-48" onClick={() => router.back()}>
             <AiFillCaretLeft className="w-5 h-5" />
             <p>Voltar</p>
           </PrimaryButton>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="max-w-md space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="md:max-w-md space-y-4">
           <Controller
             name="currentPassword"
             control={control}

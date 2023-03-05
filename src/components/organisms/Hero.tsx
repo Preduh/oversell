@@ -1,9 +1,9 @@
 export const Hero = (): JSX.Element => {
   return (
-    <div className="text-gray-600 body-font bg-white dark:bg-zinc-900">
-        <div className="container px-5 py-5 sm:py-24 mx-auto">
+    <div className="text-gray-600 body-font bg-white dark:bg-zinc-900 w-full">
+        <div className="px-8 md:px-24 py-5 sm:py-24 mx-auto">
           <div className="text-gray-900 dark:text-white">
-            <h1 className="sm:text-5xl text-2xl font-bold title-font text-center mb-4">
+            <h1 className="sm:text-5xl text-4xl font-bold title-font text-center mb-4">
               Oversell
             </h1>
             <h2 className="sm:text-3xl text-2xl font-medium title-font text-center mb-20">

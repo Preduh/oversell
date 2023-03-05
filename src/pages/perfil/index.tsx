@@ -35,20 +35,20 @@ export default function Perfil ({ token, username }: PerfilProps): JSX.Element {
   }, [user])
 
   return (
-    <div className="dark:bg-zinc-900 h-screen w-full">
+    <div className="dark:bg-zinc-900 h-full md:h-screen w-full pb-8">
       <Head>
         <title>Perfil</title>
       </Head>
 
       <Header token={token} />
 
-      <div className="h-full pt-16 px-page-margin">
-        <h1 className="text-primary-dark-text text-xl font-bold mt-4">
+      <div className="h-full pt-16 md:px-page-margin px-8">
+        <h1 className="text-primary-dark-text text-lg md:text-xl   font-bold mt-4">
           Perfil
         </h1>
 
-        <div className="flex mt-12 space-x-4">
-          <div className="space-y-4 pl-8 w-96">
+        <div className="flex flex-col md:flex-row mt-12 space-y-4 md:space-y-0 md:space-x-4">
+          <div className="space-y-4 md:pl-8 md:w-96">
             <Image
               className="rounded-lg ring-2 ring-offset-2 ring-purple-blue ring-offset-zinc-800"
               src="https://avatars.githubusercontent.com/preduh"
@@ -67,13 +67,13 @@ export default function Perfil ({ token, username }: PerfilProps): JSX.Element {
           </div>
 
           <div>
-            <form className="space-y-4">
+            <form className="space-y-4 mt-8 md:mt-0">
               <div className="space-y-4">
                 <h2 className="text-primary-dark-text text-xl font-medium">
                   Informações gerais
                 </h2>
 
-                <div className="flex space-x-4">
+                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                   <Controller
                     name="firstName"
                     control={control}
@@ -129,7 +129,7 @@ export default function Perfil ({ token, username }: PerfilProps): JSX.Element {
                   Informações da empresa
                 </h2>
 
-                <div className="flex space-x-4">
+                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                   <Controller
                     name="enterprise"
                     control={control}

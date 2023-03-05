@@ -10,3 +10,7 @@
 * {
   font-family: 'Fira Code', sans-serif;
 }
+
+html, body {
+  @apply bg-zinc-900;
+}
