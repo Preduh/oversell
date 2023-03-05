@@ -11,7 +11,7 @@ export default function Document (): JSX.Element {
         <meta property="og:url" content="https://oversell.com.br" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Oversell" />
-        <meta property="og:image" content="https://media.discordapp.net/attachments/1065707982773571635/1081995099220746240/oversell.png?width=1080&height=540" />
+        <meta property="og:image:secure_url" itemProp="image" content="https://media.discordapp.net/attachments/1065707982773571635/1081995099220746240/oversell.png?width=1080&height=540" />
       </Head>
       <body>
         <Main />
